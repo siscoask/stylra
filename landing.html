@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>Stylra — Your name, elevated.</title>
+<meta name="description" content="Transform your name into a premium styled identity. 20+ Unicode styles for creators, gamers, and anyone who wants to stand out."/>
+<meta name="theme-color" content="#0a0a0a"/>
+<meta property="og:title" content="Stylra — Your name, elevated."/>
+<meta property="og:description" content="Transform your name into a premium styled identity. 20+ Unicode styles for creators, gamers, and anyone who wants to stand out."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://stylra.app"/>
+<meta property="og:image" content="https://stylra.app/icons/icon-512.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Stylra — Your name, elevated."/>
+<meta name="twitter:description" content="Transform your name into a premium styled identity. 20+ Unicode styles instantly."/>
+<meta name="twitter:image" content="https://stylra.app/icons/icon-512.png"/>
+<link rel="icon" type="image/svg+xml" href="icons/favicon-simple.svg"/>
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v8/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20y6rNw.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,700&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="css/landing.css"/>
+<script>if(localStorage.getItem('stylra_welcomed')==='true'){window.location.replace('app.html');}</script>
+</head>
+<body>
+<div class="bg-wrap" aria-hidden="true">
+  <div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="wrap"><div class="nav__inner">
+    <div class="nav__logo">
+      <svg class="nav__mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="20" fill="#161616"/>
+        <path d="M62 22C62 22 38 18 30 30C22 42 36 50 50 50" stroke="#9b69f5" stroke-width="7" stroke-linecap="round" fill="none"/>
+        <circle cx="50" cy="50" r="3.5" fill="#9b69f5"/>
+        <path d="M50 50C64 50 78 58 70 70C62 82 38 78 38 78" stroke="#7c3aed" stroke-width="7" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="nav__wordmark">Stylra</span>
+    </div>
+    <a href="app.html" class="nav__cta">Launch app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div></div>
+</nav>
+
+<script>
+// Scroll-based nav background
+window.addEventListener('scroll',()=>{document.querySelector('.nav').classList.toggle('scrolled',window.scrollY>20)});
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__badge"><span class="hero__badge-dot"></span>Free · No account needed</div>
+    <h1 class="hero__title">Your name,<br/><em>elevated.</em></h1>
+    <p class="hero__sub">Transform any name into a premium styled identity instantly. 20+ Unicode styles, live preview, export as a story-ready card. Built for creators, gamers &amp; anyone who wants to stand out.</p>
+    <div class="hero__actions">
+      <a href="app.html" class="btn-hero btn-hero--primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Start styling free</a>
+      <a href="#features" class="btn-hero btn-hero--ghost">See features</a>
+    </div>
+    <div class="hero__showcase">
+      <p class="showcase-label">Live style preview — type "Stylra"</p>
+      <div class="showcase-grid" id="showcase-grid"></div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+import {applyTransform} from './js/transforms.js';
+const grid=document.getElementById('showcase-grid');
+const styles=[{t:'bold',g:'linear-gradient(135deg,#22d3ee,#6366f1)'},{t:'cursive',g:'linear-gradient(135deg,#f9a8d4,#e879f9)'},{t:'fraktur',g:'linear-gradient(135deg,#eab308,#ca8a04)'},{t:'double',g:'linear-gradient(135deg,#6366f1,#4f46e5)'},{t:'vaporwave',g:'linear-gradient(135deg,#a78bfa,#7c3aed)'},{t:'circled',g:'linear-gradient(135deg,#f472b6,#fb7185)'}];
+styles.forEach(s=>{const d=document.createElement('div');d.className='showcase-pill';d.style.background=s.g;d.style.webkitBackgroundClip='text';d.style.webkitTextFillColor='transparent';d.style.backgroundClip='text';d.textContent=applyTransform('Stylra',s.t);grid.appendChild(d);});
+</script>
+
+<div class="divider"></div>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="section__eyebrow reveal">Everything you need</p>
+    <h2 class="section__title reveal">Built different.<br/>Built for creators.</h2>
+    <p class="section__sub reveal">Every feature is designed to make your name unforgettable — fast.</p>
+    <div class="features-grid">
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="feature-card__title">Instant preview</div><div class="feature-card__desc">See all 20+ styles update live as you type. No lag, no loading, no nonsense.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg></div><div class="feature-card__title">Full Studio control</div><div class="feature-card__desc">Tweak colours, glow, shadows and transforms until it's exactly yours.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></div><div class="feature-card__title">Export as card</div><div class="feature-card__desc">Download a story-ready 1080×1920 PNG. Post it anywhere, instantly.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div><div class="feature-card__title">One-tap share</div><div class="feature-card__desc">Native share sheet on mobile. Copy and paste anywhere with one tap.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div class="feature-card__title">Personal gallery</div><div class="feature-card__desc">Save your favourite designs. Remix anytime. Stored locally on your device.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="feature-card__title">Check availability</div><div class="feature-card__desc">Instantly check if your handle is free on X, Instagram, TikTok and YouTube.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="feature-card__title">Handle variants</div><div class="feature-card__desc">Auto-generates 8 creative handle variations. Find one that's actually free.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="feature-card__title">Works offline</div><div class="feature-card__desc">Install as a PWA. Full generator works with zero internet. Forever free.</div></div>
+      <div class="feature-card reveal"><div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div><div class="feature-card__title">Dark &amp; light mode</div><div class="feature-card__desc">Looks stunning in dark or light. Follows your system, or pick manually.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="styles-section">
+  <div class="wrap">
+    <p class="section__eyebrow reveal" style="text-align:center">20+ transform styles</p>
+    <h2 class="section__title reveal" style="text-align:center;max-width:460px;margin:0 auto 6px">One name.<br/>Infinite personalities.</h2>
+    <p class="section__sub reveal" style="text-align:center;margin:0 auto">Unicode — paste it anywhere. Twitter, IG, TikTok, Discord.</p>
+  </div>
+  <div class="styles-scroll" id="styles-scroll"></div>
+</section>
+
+<script type="module">
+import {applyTransform} from './js/transforms.js';
+const scroll=document.getElementById('styles-scroll');
+const demos=[{n:'Bold',t:'bold',g:'linear-gradient(135deg,#9b69f5,#7c3aed)'},{n:'Cursive',t:'cursive',g:'linear-gradient(135deg,#f9a8d4,#e879f9)'},{n:'Fraktur',t:'fraktur',g:'linear-gradient(135deg,#eab308,#f59e0b)'},{n:'Double',t:'double',g:'linear-gradient(135deg,#6366f1,#4f46e5)'},{n:'Circled',t:'circled',g:'linear-gradient(135deg,#f472b6,#fb7185)'},{n:'Fullwidth',t:'fullwidth',g:'linear-gradient(135deg,#22d3ee,#0891b2)'},{n:'Vaporwave',t:'vaporwave',g:'linear-gradient(135deg,#a78bfa,#7c3aed)'},{n:'Zalgo',t:'zalgo',g:'linear-gradient(135deg,#ef4444,#c026d3)'}];
+demos.forEach(d=>{const c=document.createElement('div');c.className='style-demo';c.innerHTML=`<div class="style-demo__name" style="background:${d.g};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${applyTransform('Stylra',d.t)}</div><div class="style-demo__label">${d.n}</div>`;scroll.appendChild(c);});
+</script>
+
+<div class="divider"></div>
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <h2 class="cta-card__title">Ready to elevate<br/>your name?</h2>
+      <p class="cta-card__sub">Free forever. No account. No downloads.<br/>Just open it and start.</p>
+      <a href="app.html" class="btn-hero btn-hero--primary" style="display:inline-flex">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Start styling free
+      </a>
+      <div class="cta-card__stats">
+        <div class="stat"><div class="stat__num">20+</div><div class="stat__label">Style transforms</div></div>
+        <div class="stat"><div class="stat__num">100%</div><div class="stat__label">Free forever</div></div>
+        <div class="stat"><div class="stat__num">0</div><div class="stat__label">Account needed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><div class="footer">
+  <span class="footer__copy">© 2025 Stylra. Made for creators.</span>
+  <div class="footer__links">
+    <span class="footer__link" style="cursor:default">Privacy — We store nothing on servers</span>
+    <a href="app.html" class="footer__link">Launch app</a>
+  </div>
+</div></div></footer>
+
+<script>
+const AU='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const MAPS={
+  bold:{u:[...'𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭'],l:[...'𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇']},
+  cursive:{u:[...'𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵'],l:[...'𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏']},
+  cursiveBold:{u:[...'𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩'],l:[...'𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃']},
+  fraktur:{u:[...'𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ'],l:[...'𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷']},
+  double:{u:[...'𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ'],l:[...'𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫']},
+  circled:{u:[...'ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ'],l:[...'ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ']},
+  smallcaps:{u:[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'],l:[...'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ']},
+  fullwidth:{u:[...'ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ'],l:[...'ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ']},
+};
+function tr(text,map){return[...text].map(c=>{const ui=AU.indexOf(c.toUpperCase());if(ui===-1)return c;return(c===c.toUpperCase()&&c!==c.toLowerCase()?map.u:map.l)[ui]||c;}).join('');}
+
+const STYLES=[
+  {label:'Bold',key:'bold',grad:'linear-gradient(135deg,#9b69f5,#7c3aed)'},
+  {label:'Cursive',key:'cursive',grad:'linear-gradient(135deg,#f9a8d4,#e879f9)'},
+  {label:'Script Bold',key:'cursiveBold',grad:'linear-gradient(135deg,#fbbf24,#f59e0b)'},
+  {label:'Fraktur',key:'fraktur',grad:'linear-gradient(135deg,#4ade80,#22d3ee)'},
+  {label:'Double Struck',key:'double',grad:'linear-gradient(135deg,#22d3ee,#6366f1)'},
+  {label:'Circled',key:'circled',grad:'linear-gradient(135deg,#f472b6,#fb7185)'},
+  {label:'Small Caps',key:'smallcaps',grad:'linear-gradient(135deg,#c4b5fd,#8b5cf6)'},
+  {label:'Fullwidth',key:'fullwidth',grad:'linear-gradient(135deg,#f97316,#ec4899)'},
+];
+const NAMES=['Tunde','Sisco','Amaka','Zara','Kelechi','Sade','Emeka'];
+
+// Hero showcase
+const grid=document.getElementById('showcase-grid');
+STYLES.slice(0,6).forEach(s=>{
+  const pill=document.createElement('div');pill.className='showcase-pill';
+  pill.innerHTML=`<span style="background:${s.grad};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${tr('Stylra',MAPS[s.key])}</span>`;
+  grid.appendChild(pill);
+});
+
+// Styles scroll
+const scroll=document.getElementById('styles-scroll');
+STYLES.forEach((s,i)=>{
+  const name=NAMES[i%NAMES.length];
+  const demo=document.createElement('div');demo.className='style-demo';
+  demo.innerHTML=`<div class="style-demo__name" style="background:${s.grad};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${tr(name,MAPS[s.key])}</div><div class="style-demo__label">${s.label}</div>`;
+  scroll.appendChild(demo);
+});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+// Scroll reveal
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=`${(i%4)*.07}s`;ro.observe(el);});
+
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>

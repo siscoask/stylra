@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>404 — Stylra</title>
+<meta name="theme-color" content="#0a0a0a"/>
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#f2f2f2;font-family:'Plus Jakarta Sans',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.wrap{max-width:400px}
+.mark{width:64px;height:64px;margin:0 auto 24px;opacity:.3}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.04em;margin-bottom:12px}
+.code{font-size:1rem;color:#7c3aed;font-weight:700;margin-bottom:20px}
+p{color:#a0a0a0;line-height:1.6;margin-bottom:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#9b69f5,#6d28d9);color:#fff;border-radius:12px;font-weight:700;text-decoration:none;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:16px;height:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <svg class="mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" rx="20" fill="#161616"/>
+    <path d="M62 22C62 22 38 18 30 30C22 42 36 50 50 50" stroke="#9b69f5" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <circle cx="50" cy="50" r="3.5" fill="#9b69f5"/>
+    <path d="M50 50C64 50 78 58 70 70C62 82 38 78 38 78" stroke="#7c3aed" stroke-width="7" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div class="code">404</div>
+  <h1>Page not found</h1>
+  <p>This page doesn't exist, but your name can still be elevated.</p>
+  <a href="app.html" class="btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+    Go to app
+  </a>
+</div>
+</body>
+</html>

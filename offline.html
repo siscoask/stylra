@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Stylra — Offline</title>
+<link rel="icon" type="image/svg+xml" href="icons/favicon.svg"/>
+<script>(function(){const t=localStorage.getItem('stylra_theme');document.documentElement.setAttribute('data-theme',t||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'));})();</script>
+<style>
+:root{--bg:#0a0a0a;--s1:#161616;--b:rgba(255,255,255,.07);--t1:#f2f2f2;--t2:#a8a8a8;--t3:#555;--ac:#7c3aed;--acl:#9b69f5}
+[data-theme=light]{--bg:#f8f8f6;--s1:#fff;--b:rgba(0,0,0,.07);--t1:#111;--t2:#555;--t3:#999}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font-family:'Plus Jakarta Sans',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;-webkit-font-smoothing:antialiased}
+.logo{width:60px;height:60px;background:var(--s1);border:1px solid var(--b);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+h1{font-size:1.5rem;font-weight:800;letter-spacing:-.03em;margin-bottom:.5rem}
+h1 span{color:var(--acl)}
+p{color:var(--t2);font-size:.875rem;line-height:1.6;max-width:280px;margin:.3rem auto}
+.hint{font-size:.75rem;color:var(--t3);margin-top:.25rem}
+button{margin-top:1.75rem;background:var(--ac);color:#fff;border:none;border-radius:10px;padding:.7rem 2rem;font-size:.875rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(124,58,237,.35);transition:all .2s}
+button:hover{background:var(--acl);transform:translateY(-1px)}
+</style>
+</head>
+<body>
+<div class="logo">
+  <svg viewBox="0 0 100 100" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <path d="M62 22C62 22 38 18 30 30C22 42 36 50 50 50" stroke="#9b69f5" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <circle cx="50" cy="50" r="4" fill="#9b69f5"/>
+    <path d="M50 50C64 50 78 58 70 70C62 82 38 78 38 78" stroke="#7c3aed" stroke-width="8" stroke-linecap="round" fill="none"/>
+  </svg>
+</div>
+<h1>You're <span>offline</span></h1>
+<p>No connection right now. Stylra works fully offline once you've visited before.</p>
+<p class="hint">Check your connection and try again.</p>
+<button onclick="location.reload()">Try again</button>
+</body>
+</html>
